@@ -55,6 +55,10 @@ async function safeString(unsafeString) {
   return replaceSharp;
 }
 async function traverseObject(theObject) {
+  if(theObject === null){
+    return false;
+  }
+  
   for (let key of Object.keys(theObject)) {
     const keyType = typeof theObject[key];
     if (
